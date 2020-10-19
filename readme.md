@@ -1,4 +1,4 @@
-# Statamic Livwe Preview for Nuxt
+# Statamic Live Preview for Nuxt
 
 This package allows you to display a nuxt.js website as Live Preview in Statamic
 
@@ -13,5 +13,5 @@ This package allows you to display a nuxt.js website as Live Preview in Statamic
 Add the package as a module in your nuxt.config.js
 
 `modules: [
-    'statamic-live-preview-nuxt',
+    'statamic-live-preview-nuxt'
 ]`
