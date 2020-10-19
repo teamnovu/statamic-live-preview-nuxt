@@ -1,19 +1,19 @@
 {
-  "name": "nuxt-live-preview",
+  "name": "statamic-live-preview-nuxt",
   "version": "1.0.0",
-  "description": "Live Preview for Nuxt.js",
+  "description": "Statamic Live Preview for Nuxt.js",
   "main": "lib/module.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/teamnovu/nuxt-live-preview.git"
+    "url": "git+https://github.com/teamnovu/statamic-live-preview-nuxt.git"
   },
   "author": "Benaja Hunzinger",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/teamnovu/nuxt-live-preview/issues"
+    "url": "https://github.com/teamnovu/statamic-live-preview-nuxt/issues"
   },
-  "homepage": "https://github.com/teamnovu/nuxt-live-preview#readme"
+  "homepage": "https://github.com/teamnovu/statamic-live-preview-nuxt#readme"
 }
