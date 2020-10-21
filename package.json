@@ -2,7 +2,7 @@
   "name": "statamic-live-preview-nuxt",
   "version": "1.0.0",
   "description": "Statamic Live Preview for Nuxt.js",
-  "main": "lib/module.js",
+  "main": "lib/plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
