@@ -14,7 +14,7 @@ Create a file called 'live-preview.js' in the plugins folder.
 
 Add the following lines to `plugins/live-preview.js':
 
-```
+```javascript
 import livePreview from '@teamnovu/statamic-live-preview-nuxt'
 
 export default livePreview
@@ -22,9 +22,22 @@ export default livePreview
 
 Add the plugin to your nuxt.config.js file.
 
-```
+```javascript
 plugins: [
-    ...
+    // ...
     '~/plugins/live-preview.js'
 ]
+```
+
+### Transpilation
+
+Depending on your Node-version you may need to add the package to be transpiled by nuxt.
+
+```javascript
+build: {
+    transpile: [
+        // ...
+        '@teamnovu/statamic-live-preview-nuxt'
+    ]
+}
 ```
