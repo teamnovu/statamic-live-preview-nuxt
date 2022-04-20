@@ -15,7 +15,7 @@ Create a file called 'live-preview.js' in the plugins folder.
 Add the following lines to `plugins/live-preview.js':
 
 ```
-import livePreview from 'statamic-live-preview-nuxt'
+import livePreview from '@teamnovu/statamic-live-preview-nuxt'
 
 export default livePreview
 ```
