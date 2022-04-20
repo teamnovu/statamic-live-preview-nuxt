@@ -2,7 +2,6 @@
   "name": "@teamnovu/statamic-live-preview-nuxt",
   "version": "1.0.0",
   "description": "A Nuxt.js Plugin for the Statamic Live Preview",
-  "repository": "teamnovu/statamic-live-preview-nuxt",
   "private": false,
   "main": "lib/plugin.js",
   "scripts": {
@@ -13,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/teamnovu/statamic-live-preview-nuxt.git"
   },
+  "author": "novu GmbH",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/teamnovu/statamic-live-preview-nuxt/issues"
