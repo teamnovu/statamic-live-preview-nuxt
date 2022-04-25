@@ -8,6 +8,10 @@ This package allows you to use a Nuxt website as Live Preview in Statamic.
 
 `yarn add @teamnovu/statamic-live-preview-nuxt`
 
+If you are migrating from the previous statamic live preview provided by our fork, please also remove the old statamic live preview module:
+
+`yarn remove statamic-live-preview-nuxt`
+
 ### Add plugin to your nuxt config
 
 Create a file called 'live-preview.js' in the plugins folder.
