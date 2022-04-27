@@ -33,6 +33,12 @@ plugins: [
 ]
 ```
 
+### Statamic 3.3 Fork using `window.postMessage()`
+
+If you are using our Statamic 3.3 fork you can set the CMS to update the live preview without having it refresh the page after every change.
+To do so set the config `post_message_data` in `config/statamic/live_preview.php` to `live-preview-update`.
+This will tell the CMS to use `window.postMessage()` to notify this plugin to refresh the page.
+
 ### Transpilation
 
 Depending on your Node-version you may need to add the package to be transpiled by nuxt.
