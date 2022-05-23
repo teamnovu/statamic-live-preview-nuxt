@@ -41,6 +41,7 @@ This will tell the CMS to use `window.postMessage()` to notify this plugin to re
 
 ### ScrollTo Element Behavior (Optional)
 
+For better user experience you can enable scroll to element when the user focuses an input element. However **not all** editable fields are supported.
 Register the Vue Directive to enable ScrollTo Element behavior.
 
 ```javascript
@@ -64,8 +65,8 @@ Nested Example:
 <!-- pages/_.vue -->
 
 <ComponentsLoader
-	:components="page.replicator_product_components"
-    v-editor-target="'replicator_product_components'"
+  :components="page.replicator_product_components"
+  v-editor-target="'replicator_product_components'"
 />
 ```
 
@@ -76,8 +77,8 @@ Then within your ComponentsLoader.vue:
 <!-- components/ComponentsLoader.vue -->
 
 <Component
-	...
-    v-editor-target="index"
+  ...
+  v-editor-target="index"
 />
 ```
 
