@@ -39,6 +39,50 @@ If you are using our Statamic 3.3 fork you can set the CMS to update the live pr
 To do so set the config `post_message_data` in `config/statamic/live_preview.php` to `live-preview-update`.
 This will tell the CMS to use `window.postMessage()` to notify this plugin to refresh the page.
 
+### ScrollTo Element Behavior (Optional)
+
+Register the Vue Directive to enable ScrollTo Element behavior.
+
+```javascript
+import Vue from 'vue'
+import livePreview, { Directive } from '@teamnovu/statamic-live-preview-nuxt'
+
+Vue.use(Directive)
+
+export default livePreview
+```
+
+Use it like this:
+
+```html
+<h2 v-editor-target="'title'">This is a headline</h2>
+```
+
+Nested Example:
+
+```html
+<!-- pages/_.vue -->
+
+<ComponentsLoader
+	:components="page.replicator_product_components"
+    v-editor-target="'replicator_product_components'"
+/>
+```
+
+All values used with `v-editor-target` must match the corresponding field `handle` of the CMS. 
+Then within your ComponentsLoader.vue:
+
+```html
+<!-- components/ComponentsLoader.vue -->
+
+<Component
+	...
+    v-editor-target="index"
+/>
+```
+
+If you nest `v-editor-target` their values will be concatenated. For Example: `replicator_product_components.0.title`.
+
 ### Transpilation
 
 Depending on your Node-version you may need to add the package to be transpiled by nuxt.
