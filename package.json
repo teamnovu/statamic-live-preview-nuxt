@@ -15,7 +15,7 @@
     "url": "git+https://github.com/teamnovu/statamic-live-preview-nuxt.git"
   },
   "author": "novu GmbH",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/teamnovu/statamic-live-preview-nuxt/issues"
   },
