@@ -1,19 +1,29 @@
 {
-  "name": "statamic-live-preview-nuxt",
-  "version": "1.0.0",
-  "description": "Statamic Live Preview for Nuxt.js",
+  "name": "@teamnovu/statamic-live-preview-nuxt",
+  "version": "0.1.0",
+  "description": "A Nuxt.js Plugin for the Statamic Live Preview",
+  "private": false,
   "main": "lib/plugin.js",
   "scripts": {
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "release-minor": "standard-version --release-as minor && git push --follow-tags && npm publish",
+    "release-major": "standard-version --release-as major && gi t push --follow-tags && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/teamnovu/statamic-live-preview-nuxt.git"
   },
-  "author": "Benaja Hunzinger",
+  "author": "novu GmbH",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/teamnovu/statamic-live-preview-nuxt/issues"
   },
-  "homepage": "https://github.com/teamnovu/statamic-live-preview-nuxt#readme"
+  "homepage": "https://github.com/teamnovu/statamic-live-preview-nuxt#readme",
+  "devDependencies": {
+    "standard-version": "^9.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
