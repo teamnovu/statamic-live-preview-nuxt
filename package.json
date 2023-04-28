@@ -1,6 +1,6 @@
 {
   "name": "@teamnovu/statamic-live-preview-nuxt",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Nuxt.js Plugin for the Statamic Live Preview",
   "private": false,
   "main": "lib/plugin.js",
