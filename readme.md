@@ -33,6 +33,10 @@ plugins: [
 ]
 ```
 
+### Statamic 3.4.8 or higher
+
+To use the live preview without refreshing the page after every change, disable "Refresh" on the preview targets of your collection.
+
 ### Statamic 3.3 Fork using `window.postMessage()`
 
 If you are using our Statamic 3.3 fork you can set the CMS to update the live preview without having it refresh the page after every change.
