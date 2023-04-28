@@ -7,7 +7,7 @@
   "scripts": {
     "release": "standard-version && git push --follow-tags && npm publish",
     "release-minor": "standard-version --release-as minor && git push --follow-tags && npm publish",
-    "release-major": "standard-version --release-as major && gi t push --follow-tags && npm publish",
+    "release-major": "standard-version --release-as major && git push --follow-tags && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
