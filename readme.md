@@ -1,102 +1,94 @@
-# Statamic Live Preview for Nuxt
+<!--
+Get your module up and running quickly.
 
-This package allows you to use a Nuxt website as Live Preview in Statamic.
+Find and replace all on all files (CMD+SHIFT+F):
+- Name: My Module
+- Package name: my-module
+- Description: My new Nuxt module
+-->
 
-## Installation
+# My Module
 
-### Add package to your nuxt app
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
+[![Nuxt][nuxt-src]][nuxt-href]
 
-`yarn add @teamnovu/statamic-live-preview-nuxt`
+My new Nuxt module for doing amazing things.
 
-If you are migrating from the previous statamic live preview provided by our fork, please also remove the old statamic live preview module:
+- [✨ &nbsp;Release Notes](/CHANGELOG.md)
+<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/my-module?file=playground%2Fapp.vue) -->
+<!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
-`yarn remove statamic-live-preview-nuxt`
+## Features
 
-### Add plugin to your nuxt config
+<!-- Highlight some of the features your module provide here -->
+- ⛰ &nbsp;Foo
+- 🚠 &nbsp;Bar
+- 🌲 &nbsp;Baz
 
-Create a file called 'live-preview.js' in the plugins folder.
+## Quick Setup
 
-Add the following lines to `plugins/live-preview.js':
+1. Add `my-module` dependency to your project
 
-```javascript
-import livePreview from '@teamnovu/statamic-live-preview-nuxt'
+```bash
+# Using pnpm
+pnpm add -D my-module
 
-export default livePreview
+# Using yarn
+yarn add --dev my-module
+
+# Using npm
+npm install --save-dev my-module
 ```
 
-Add the plugin to your nuxt.config.js file.
+2. Add `my-module` to the `modules` section of `nuxt.config.ts`
 
-```javascript
-plugins: [
-    // ...
-    '~/plugins/live-preview.js'
-]
+```js
+export default defineNuxtConfig({
+  modules: [
+    'my-module'
+  ]
+})
 ```
 
-### Statamic 3.4.8 or higher
+That's it! You can now use My Module in your Nuxt app ✨
 
-To use the live preview without refreshing the page after every change, disable "Refresh" on the preview targets of your collection.
+## Development
 
-### Statamic 3.3 Fork using `window.postMessage()`
+```bash
+# Install dependencies
+npm install
 
-If you are using our Statamic 3.3 fork you can set the CMS to update the live preview without having it refresh the page after every change.
-To do so set the config `post_message_data` in `config/statamic/live_preview.php` to `live-preview-update`.
-This will tell the CMS to use `window.postMessage()` to notify this plugin to refresh the page.
+# Generate type stubs
+npm run dev:prepare
 
-### ScrollTo Element Behavior (Optional)
+# Develop with the playground
+npm run dev
 
-For better user experience you can enable scroll to element when the user focuses an input element. However **not all** editable fields are supported.
-Register the Vue Directive to enable ScrollTo Element behavior.
+# Build the playground
+npm run dev:build
 
-```javascript
-import Vue from 'vue'
-import livePreview, { Directive } from '@teamnovu/statamic-live-preview-nuxt'
+# Run ESLint
+npm run lint
 
-Vue.use(Directive)
+# Run Vitest
+npm run test
+npm run test:watch
 
-export default livePreview
+# Release new version
+npm run release
 ```
 
-Use it like this:
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/my-module/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/my-module
 
-```html
-<h2 v-editor-target="'title'">This is a headline</h2>
-```
+[npm-downloads-src]: https://img.shields.io/npm/dm/my-module.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/my-module
 
-Nested Example:
+[license-src]: https://img.shields.io/npm/l/my-module.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://npmjs.com/package/my-module
 
-```html
-<!-- pages/_.vue -->
-
-<ComponentsLoader
-  :components="page.replicator_product_components"
-  v-editor-target="'replicator_product_components'"
-/>
-```
-
-All values used with `v-editor-target` must match the corresponding field `handle` of the CMS. 
-Then within your ComponentsLoader.vue:
-
-```html
-<!-- components/ComponentsLoader.vue -->
-
-<Component
-  ...
-  v-editor-target="index"
-/>
-```
-
-If you nest `v-editor-target` their values will be concatenated. For Example: `replicator_product_components.0.title`.
-
-### Transpilation
-
-Depending on your Node-version you may need to add the package to be transpiled by nuxt.
-
-```javascript
-build: {
-    transpile: [
-        // ...
-        '@teamnovu/statamic-live-preview-nuxt'
-    ]
-}
-```
+[nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
+[nuxt-href]: https://nuxt.com

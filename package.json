@@ -1,29 +1,49 @@
 {
   "name": "@teamnovu/statamic-live-preview-nuxt",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "A Nuxt.js Plugin for the Statamic Live Preview",
-  "private": false,
-  "main": "lib/plugin.js",
-  "scripts": {
-    "release": "standard-version && git push --follow-tags && npm publish",
-    "release-minor": "standard-version --release-as minor && git push --follow-tags && npm publish",
-    "release-major": "standard-version --release-as major && git push --follow-tags && npm publish",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/teamnovu/statamic-live-preview-nuxt.git"
   },
-  "author": "novu GmbH",
+  "private": false,
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/teamnovu/statamic-live-preview-nuxt/issues"
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
   },
-  "homepage": "https://github.com/teamnovu/statamic-live-preview-nuxt#readme",
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.5.2"
+  },
   "devDependencies": {
-    "standard-version": "^9.3.2"
-  },
-  "publishConfig": {
-    "access": "public"
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/module-builder": "^0.4.0",
+    "@nuxt/schema": "^3.5.2",
+    "@nuxt/test-utils": "^3.5.1",
+    "@types/node": "^18",
+    "changelogen": "^0.5.3",
+    "eslint": "^8.42.0",
+    "nuxt": "^3.5.1",
+    "vitest": "^0.31.4"
   }
 }
