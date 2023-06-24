@@ -1,6 +1,9 @@
 # Statamic Live Preview for Nuxt
 
-This package allows you to use a Nuxt website as Live Preview in Statamic.
+This package allows you to use a Nuxt website as Live Preview in Statamic
+
+## Requirements
+This package is designed to be used in conjunction with GraphQL, utilizing the [nuxt-graphql-client](https://nuxt-graphql-client.web.app/getting-started/quick-start) package.
 
 ## Installation
 
@@ -24,15 +27,6 @@ import livePreview from '@teamnovu/statamic-live-preview-nuxt'
 export default livePreview
 ```
 
-Add the plugin to your nuxt.config.js file.
-
-```javascript
-plugins: [
-    // ...
-    '~/plugins/live-preview.js'
-]
-```
-
 ### Statamic 3.4.8 or higher
 
 To use the live preview without refreshing the page after every change, disable "Refresh" on the preview targets of your collection.
@@ -45,19 +39,8 @@ This will tell the CMS to use `window.postMessage()` to notify this plugin to re
 
 ### ScrollTo Element Behavior (Optional)
 
-For better user experience you can enable scroll to element when the user focuses an input element. However **not all** editable fields are supported.
-Register the Vue Directive to enable ScrollTo Element behavior.
-
-```javascript
-import Vue from 'vue'
-import livePreview, { Directive } from '@teamnovu/statamic-live-preview-nuxt'
-
-Vue.use(Directive)
-
-export default livePreview
-```
-
-Use it like this:
+For better user experience you can add scroll to element behaviour when the user focuses an input element. However **not all** editable fields are supported.
+Define the Vue Directive `v-editor-target` to enable ScrollTo Element behavior.
 
 ```html
 <h2 v-editor-target="'title'">This is a headline</h2>
@@ -74,7 +57,7 @@ Nested Example:
 />
 ```
 
-All values used with `v-editor-target` must match the corresponding field `handle` of the CMS. 
+All values used with `v-editor-target` must match the corresponding field `handle` of the CMS.
 Then within your ComponentsLoader.vue:
 
 ```html
