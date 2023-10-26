@@ -63,7 +63,22 @@ This will tell the CMS to use `window.postMessage()` to notify this plugin to re
 
 For better user experience you can enable scroll to element when the user focuses an input element. However **not all** editable fields are supported.
 
-To enable this behavior set the `scrollToElement` in the nuxt-config runtime config to true as follows:
+#### Nuxt2
+
+Register the Vue Directive to enable ScrollTo Element behavior.
+
+```javascript
+import Vue from 'vue'
+import livePreview, { Directive } from '@teamnovu/statamic-live-preview-nuxt'
+
+Vue.use(Directive)
+
+export default livePreview
+```
+
+#### Nuxt3
+
+To enable this behavior set the `scrollToElement` in the nuxt runtime config to true:
 
 ```javascript
 export default defineNuxtConfig({
@@ -76,8 +91,6 @@ export default defineNuxtConfig({
   }
 })
 ```
-
-This will register the Vue Directive to enable ScrollTo Element behavior.
 
 Use it like this:
 
