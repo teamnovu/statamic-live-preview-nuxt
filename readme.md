@@ -65,7 +65,7 @@ For better user experience you can enable scroll to element when the user focuse
 
 #### Nuxt2
 
-Register the Vue Directive to enable ScrollTo Element behavior.
+To enable this behavior register the Vue Directive.
 
 ```javascript
 import Vue from 'vue'
