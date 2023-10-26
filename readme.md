@@ -1,21 +1,21 @@
 # Statamic Live Preview for Nuxt
 
-This package allows you to use a Nuxt website as Live Preview in Statamic
+This package allows you to use a Nuxt website as Live Preview in Statamic.
 
 ## Requirements
 This package is designed to be used in conjunction with GraphQL, utilizing the [nuxt-graphql-client](https://nuxt-graphql-client.web.app/getting-started/quick-start) package.
 
-## Installation
+## Installation nuxt2
 
 ### Add package to your nuxt app
 
-`yarn add @teamnovu/statamic-live-preview-nuxt`
+`yarn add @teamnovu/statamic-live-preview-nuxt@^2.0.0`
 
 If you are migrating from the previous statamic live preview provided by our fork, please also remove the old statamic live preview module:
 
 `yarn remove statamic-live-preview-nuxt`
 
-### Add plugin to your nuxt config
+### Add plugin to your nuxt-config
 
 Create a file called 'live-preview.js' in the plugins folder.
 
@@ -25,6 +25,28 @@ Add the following lines to `plugins/live-preview.js':
 import livePreview from '@teamnovu/statamic-live-preview-nuxt'
 
 export default livePreview
+```
+
+Add the plugin to your nuxt.config.js file.
+
+```javascript
+plugins: [
+    // ...
+    '~/plugins/live-preview.js'
+]
+```
+
+## Installation nuxt3
+
+`yarn add @teamnovu/statamic-live-preview-nuxt`
+
+### Add plugin to your nuxt-config
+
+```javascript
+plugins: [
+    // ...
+    '@teamnovu/statamic-live-preview-nuxt'
+]
 ```
 
 ### Statamic 3.4.8 or higher
@@ -39,21 +61,25 @@ This will tell the CMS to use `window.postMessage()` to notify this plugin to re
 
 ### ScrollTo Element Behavior (Optional)
 
-For better user experience you can add scroll to element behavior when the user focuses an input element. However **not all** editable fields are supported.
+For better user experience you can enable scroll to element when the user focuses an input element. However **not all** editable fields are supported.
 
 To enable this behavior set the `scrollToElement` in the nuxt-config runtime config to true as follows:
 
 ```javascript
-export default {
+export default defineNuxtConfig({
+  // ...
   runtimeConfig: {
+    // ...
     statamicLivePreview: {
       scrollToElement: true
     }
   }
-}
+})
 ```
 
-Define the Vue Directive `v-editor-target` to enable ScrollTo Element behavior.
+This will register the Vue Directive to enable ScrollTo Element behavior.
+
+Use it like this:
 
 ```html
 <h2 v-editor-target="'title'">This is a headline</h2>
