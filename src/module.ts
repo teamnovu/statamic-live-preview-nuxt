@@ -17,3 +17,6 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolver.resolve('./runtime/plugin'))
   }
 })
+
+
+// NOT POSSIBLE DUE TO THE GQL STATE IS NOT AVAILABLE useGqlHost -> nuxt-graphql-client
