@@ -39,7 +39,20 @@ This will tell the CMS to use `window.postMessage()` to notify this plugin to re
 
 ### ScrollTo Element Behavior (Optional)
 
-For better user experience you can add scroll to element behaviour when the user focuses an input element. However **not all** editable fields are supported.
+For better user experience you can add scroll to element behavior when the user focuses an input element. However **not all** editable fields are supported.
+
+To enable this behavior set the `scrollToElement` in the nuxt-config runtime config to true as follows:
+
+```javascript
+export default {
+  runtimeConfig: {
+    statamicLivePreview: {
+      scrollToElement: true
+    }
+  }
+}
+```
+
 Define the Vue Directive `v-editor-target` to enable ScrollTo Element behavior.
 
 ```html
