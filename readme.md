@@ -2,17 +2,20 @@
 
 This package allows you to use a Nuxt website as Live Preview in Statamic.
 
-## Installation
+## Requirements
+This package is designed to be used in conjunction with GraphQL, utilizing the [nuxt-graphql-client](https://nuxt-graphql-client.web.app/getting-started/quick-start) package.
+
+## Installation nuxt2
 
 ### Add package to your nuxt app
 
-`yarn add @teamnovu/statamic-live-preview-nuxt`
+`yarn add @teamnovu/statamic-live-preview-nuxt@^2.0.0`
 
 If you are migrating from the previous statamic live preview provided by our fork, please also remove the old statamic live preview module:
 
 `yarn remove statamic-live-preview-nuxt`
 
-### Add plugin to your nuxt config
+### Add plugin to your nuxt-config
 
 Create a file called 'live-preview.js' in the plugins folder.
 
@@ -33,6 +36,19 @@ plugins: [
 ]
 ```
 
+## Installation nuxt3
+
+`yarn add @teamnovu/statamic-live-preview-nuxt`
+
+### Add plugin to your nuxt-config
+
+```javascript
+plugins: [
+    // ...
+    '@teamnovu/statamic-live-preview-nuxt'
+]
+```
+
 ### Statamic 3.4.8 or higher
 
 To use the live preview without refreshing the page after every change, disable "Refresh" on the preview targets of your collection.
@@ -46,7 +62,10 @@ This will tell the CMS to use `window.postMessage()` to notify this plugin to re
 ### ScrollTo Element Behavior (Optional)
 
 For better user experience you can enable scroll to element when the user focuses an input element. However **not all** editable fields are supported.
-Register the Vue Directive to enable ScrollTo Element behavior.
+
+#### Nuxt2
+
+To enable this behavior register the Vue Directive.
 
 ```javascript
 import Vue from 'vue'
@@ -55,6 +74,22 @@ import livePreview, { Directive } from '@teamnovu/statamic-live-preview-nuxt'
 Vue.use(Directive)
 
 export default livePreview
+```
+
+#### Nuxt3
+
+To enable this behavior set the `scrollToElement` in the nuxt runtime config to true:
+
+```javascript
+export default defineNuxtConfig({
+  // ...
+  runtimeConfig: {
+    // ...
+    statamicLivePreview: {
+      scrollToElement: true
+    }
+  }
+})
 ```
 
 Use it like this:
@@ -74,7 +109,7 @@ Nested Example:
 />
 ```
 
-All values used with `v-editor-target` must match the corresponding field `handle` of the CMS. 
+All values used with `v-editor-target` must match the corresponding field `handle` of the CMS.
 Then within your ComponentsLoader.vue:
 
 ```html
